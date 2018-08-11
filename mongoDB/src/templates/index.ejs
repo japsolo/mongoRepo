@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registro de Usuarios</title>
+</head>
+<body>
+	<h2>Ya hay <%= listaEstudiantes.length %> personas en nuestra comunidad</h2>
+	<ul>
+		<% for (var i = 0; i < listaEstudiantes.length; i++) { %>
+			<li><%= listaEstudiantes[i].name + ' ' + listaEstudiantes[i].lastName + ' ' + listaEstudiantes[i].age + ' de edad.' %></li>
+		<% } %>
+	</ul>
+	<h2>Registrate</h2>
+	<form action="/registro" method="post">
+		<div>
+			<label>Nombre:</label>
+			<input type="text" name="name">
+		</div>
+		<div>
+			<label>Apellido:</label>
+			<input type="text" name="lastName">
+		</div>
+		<div>
+			<label>Edad:</label>
+			<input type="text" name="age">
+		</div>
+		<button type="submit">GUARDAR</button>
+	</form>
+</body>
+</html>
